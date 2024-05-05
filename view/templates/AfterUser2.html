@@ -1,0 +1,261 @@
+{%extends "base.html" %}
+{% block title %} ĐỔI ĐIỂM {%endblock%}
+{% block css %}AfterUser2.css{%endblock%}
+
+{%block nutHeader%}
+<i class="fa-solid fa-bell"></i>
+<li class="nut-tkct">
+    <a href="afteruser1">
+        <button class="myButton">Tài khoản của tôi</button>
+    </a>
+</li>
+<li class="nut-DX">
+    <form method="post">
+        <button class="myButton" name="Logout" value="Logout">Đăng xuất</button>
+    </form>
+</li>
+{%endblock%}
+
+{% block container %}
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="static/script/au1.js"></script>
+
+    <br><br>
+    <div class="container">
+        <h1>
+            <b>Chào mừng {{ user }}!
+            <div class="emer" style="float:right; font-size: 25px; ">
+                Số <div class="emerald" style="color:#00764C; display: inline; ">Emerald</div> hiện tại: <span style="color:#00764C" id = "sodiem"></span>
+            </div>
+            </b>
+        </h1>
+        <br><br>
+        <!-- <h3>           
+            <b>👉 Đổi vật phẩm</b>
+        </h3> -->
+
+        <!-- ! slider -->
+
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-3"> <b>👉 Đổi vật phẩm</b> </h3>
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev" style="color:#fff; background:#00764C">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next" style="color:#fff; background:#00764C"  >
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://www.dongyvietnam.org/wp-content/uploads/2020/11/thuoc-xo-3.jpeg" >
+                                        <div class="card-body">
+                                            <h4 class="card-title">Thuốc xổ</h4>
+                                            <p class="card-text">Happy Market<br><Br>GIÚP BẠN ĐI VỆ SINH DỄ HÀNG HƠN<br><Br>Địa điểm: Số 4, đường Trần Hưng Đạo</p>
+                                            <money><br><b style="color:#00764C; font-size: 20px;">E 6156500</b></money>
+                                            <button> 
+                                                Còn hàng
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://baobithucphamre.com/wp-content/uploads/2017/09/gang-tay-nilon-dung-mot-lan.jpg">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Găng tay tiện lợi </h4>
+                                            <p class="card-text">HAPPY MARKET<br><br>THUẬN TIỆN SỬ DỤNG<br><br>Địa điểm: Số 4 đường Trần Hưng Đạo</p>
+                                            <money><br><b style="color:#00764C; font-size: 20px;">E 990</b></money>
+                                            <button> 
+                                                Còn hàng
+                                            </button>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://chiaki.vn/upload/product/2022/03/622844c717abc-09032022131015.jpg">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Bàn chải điện</h4>
+                                            <p class="card-text">HAPPY MARKET<br><br>DỄ DÀNG SỬ DỤNG<br><br>Địa điểm: Số 4 đường Trần Hưng Đạo</p>
+                                            <money><br><b style="color:#00764C; font-size: 20px;">E 13980</b></money>
+                                            <button> 
+                                                Còn hàng
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://cf.shopee.vn/file/f570a9945b16400dd37058f81596fdbf">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Áo hoodie cặp đôi</h4>
+                                            <p class="card-text">BigC<br><br>PHÙ HỢP VỚI GIỚI TRẺ, DÀNH CHO NHỮNG CẶP ĐÔI ĐANG YÊU NHAU<br><br>Địa chỉ:222 Đ. Trần Duy Hưng</p>
+                                            <money><br><b style="color:#00764C; font-size: 20px;">E 13980</b></money>
+                                            <button> 
+                                                Còn hàng
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://afamilycdn.com/150157425591193600/2020/5/21/-15900308765461499704399.jpg">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Hộp trang điểm</h4>
+                                            <p class="card-text">Sammi Mart <br><br>DÀNH CHO NHỮNG NGƯỜI ƯA THÍCH VẺ ĐẸP HOÀN MỸ<br><br>Địa chỉ: số 43 P. Đặng Văn Ngữ </p>
+                                            <money><br><b style="color:#00764C; font-size: 20px;">E 13980</b></money>
+                                            <button> 
+                                                Còn hàng
+                                            </button>
+                                        </div>
+                                        </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://cdn.shopify.com/s/files/1/0011/0162/7439/products/iPhone14ProMax_DeepPurple_bb227bb9-44d2-48fd-83e6-37176aa70d2e_1200x.png?v=1668771881">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Iphone 14 pro max</h4>
+                                            <p class="card-text">Thế giới di động <br><br> THỆ HỆ ĐIỆN THOẠI KIẾN TẠO TƯƠNG LAI <br><br> Địa chỉ: 312 Đường Trần Đại Nghĩa</p>
+                                            <money><br><b style="color:#00764C; font-size: 20px;">E 13980</b></money>
+                                            <button> 
+                                                Còn hàng
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ! link -->
+        <br><br>
+
+        <!-- <div class="xemtatca">
+            <a href="#">Xem tất cả</a>
+        </div> -->
+        <bR><br><br>
+        <h3>           
+            <b>👉 Đổi mã giảm giá</b>
+        </h3>
+
+        <br><br>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"><h3><b>CỬA HÀNG</b></h3></th>
+                    <!-- <th scope="col"><h3><b>ID MÃ</b></h3></th> -->
+                    <th scope="col"><h3><b>GIẢM GIÁ</b></h3></th>
+                    <th scope="col" style="color: #00764C"><h3><b>EMERALD</b></h3></th>
+                    <th scope="col"><h3><b style="color: red;">ĐỔI</b></h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <form method = "post" id = "form{{ loop.index }}">
+                <tr>
+                    <td><b name = "dt1">{{ row['cuahang'] }}</b></td>
+                    <!-- <td name = "dt2">{{ row['item_id'] }}</td> -->
+                    <td name = "dt3">{{ row['giamgia'] }}</td>
+                    <td name = "dt4">{{ row['emerald'] }}</td>
+                    <td>
+                        <button type = "submit" class="myButton2" name = "button{{ loop.index }}" value="Button_doi" ><b>Đổi</b></button>
+                    </tr>
+                </tr>
+                </form>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br><br><br>
+
+        <h3><b>👉 Hỗ trợ người khuyết tật</b></h3>
+        <br><br>
+        <h5>
+            <b>
+                <form method = "post">
+                <div class="input-group">
+                    <div class="nhap-so">
+                        Nhập số
+                        <div class="e2" style="color:#00764C; display: inline;">
+                            Emerald
+                        </div>
+                    </div>
+                    <input type="text" name ="hotroemerald" id = "hotroemerald" class="form-control form-control-lg bg-light fs-6">
+                    <div class="doi">
+                        <a href="#">
+                            <button class=”myButton2” name = "Hotro_doi" value="Hotro_doi"><b>Đổi</b></button>
+                        </a> 
+                    </div>
+                </div>
+                </form>
+            </b>  
+            <br><br>
+                <i><b><u>Quy đổi:</u></b></i> <i style="font-size:16px;">1k VND = 100 
+                    <div class="e" style="color:#00764C; display: inline">
+                        emerald
+                    </div></i>    
+        </h5>
+        <br>
+        <i>“Con người không thể sống yêu thương nếu thiếu trái tim”</i>
+        <br><br><br><br>
+        <h3><b>👉 Thống kê đổi điểm</b></h3>
+        <br>
+        <div class="table1">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"><h3><b>CỬA HÀNG</b></h3></th>
+                    <th scope="col"><h3><b>MÃ</b></h3></th>
+                    <th scope="col"><h3><b>THỜI GIAN</b></h3></th>
+                    <th scope="col" style="color: #00764C"><h3><b>EMERALD</b></h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data1%}
+                <tr>
+                    <th scope="row">{{ row['vatdung'] }}</th>
+                    <td>{{ row['ma'] }}</td>
+                    <td>{{ row['thoigian'] }}</td>
+                    <td>{{ row['emerald'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br><br>
+        </div>
+
+        <h3>
+            <b>👉 Mã giới thiệu bạn bè: <span id="codeText">CJKJAC816</span></b>
+            <button id="copyButton" onclick="copyText()">COPY</button>
+        </h3>
+        <br><br><br>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="static/script/au1.js"></script>
+{% endblock %}
