@@ -13,4 +13,4 @@ Login_manager = login_manager_create(app, Session(engine))
 
 if __name__ == '__main__':
     # app.run(debug=True)
-    app.run(debug=True)
+    app.run()

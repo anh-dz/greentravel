@@ -13,7 +13,7 @@ def au1():
             madonhang = request.form.get('madonhang')
             nhapdiem = request.form.get('nhapdiem')
             # maker = QR_maker(Session(engine), "control/QR/", "localhost:5000/qr/")
-            maker = QR_maker(Session(engine), "control/QR/", f"20.195.10.52:1961/qr/")
+            maker = QR_maker(Session(engine), "control/QR/", f"{running}/qr/")
             maker.QR_full_make(seller_id = 1, point = nhapdiem, mdh = madonhang)
             data = {
                 'img' : maker.getname()
